@@ -34,12 +34,12 @@ def retrieve_documents(query):
         include_metadata=True
     )
 
-    context = ""
+    clean_text = ""
 
     for match in results.matches:
-        context += match.metadata["text"] + "\n\n"
+        clean_text = match.metadata["text"] + "\n\n"
 
-    return context
+    return clean_text
 
 
 
