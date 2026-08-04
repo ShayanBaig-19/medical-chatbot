@@ -13,7 +13,7 @@ def generate_response(context, query):
         temperature=0.8
     )
 
-    chain = prompt_template | llm
+    chain = prompt| llm
 
     answer = chain.invoke({
         "context": context,
