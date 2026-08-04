@@ -1,7 +1,7 @@
 import os
 from dotenv import load_dotenv
 from langchain_mistralai import ChatMistralAI
-from src.prompt import prompt_template
+from src.prompt import prompt
 
 load_dotenv()
 
