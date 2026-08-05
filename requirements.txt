@@ -5,4 +5,4 @@ langchain-mistralai
 ipykernel
 pinecone
 python-dotenv
-
+fastapi uvicorn
