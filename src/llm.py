@@ -10,7 +10,7 @@ def generate_response(context, query):
     llm = ChatMistralAI(
         api_key=os.getenv("mistral"),
         model="mistral-large-latest",
-        temperature=0.8
+        temperature=0
     )
 
     chain = prompt| llm
