@@ -22,11 +22,15 @@ IMPORTANT:
 - Every statement in your answer must come directly from the provided context.
 - Do not add examples, organizations, websites, phone numbers, treatments, or additional facts unless they are explicitly present in the context.
 
+Chat History:
+{chat_history}
+
 Context:
 {context}
 
 Question:
 {question}
+
 
 Answer:
 """)

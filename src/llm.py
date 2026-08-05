@@ -5,7 +5,7 @@ from src.prompt import prompt
 
 load_dotenv()
 
-def generate_response(context, query):
+def generate_response(context, query, chat_history):
 
     llm = ChatMistralAI(
         api_key=os.getenv("mistral"),
@@ -17,7 +17,8 @@ def generate_response(context, query):
 
     answer = chain.invoke({
         "context": context,
-        "question": query
+        "question": query ,
+        "chat_history": chat_history
     })
 
     return answer
