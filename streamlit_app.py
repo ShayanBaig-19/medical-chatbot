@@ -57,23 +57,26 @@ def history_for_pipeline() -> str:
 
 
 def run_rag(question: str, previous_history: str) -> str:
-    """Run the established RAG flow without changing backend behavior."""
     try:
         rewritten_question = rewrite_query(previous_history, question)
+        logger.info(f"Rewritten question: {rewritten_question}")
+
         try:
             context = retrieve_documents(rewritten_question)
-        except Exception:
+            logger.info("Document retrieval successful")
+        except Exception as e:
             logger.exception("Document retrieval failed")
             context = ""
 
+        logger.info("Calling generate_response...")
         answer = generate_response(context, question, previous_history)
+        logger.info("generate_response successful")
+
         return getattr(answer, "content", str(answer))
-    except Exception:
+
+    except Exception as e:
         logger.exception("Medical assistant response generation failed")
-        return (
-            "I’m sorry, I couldn’t complete that response right now. "
-            "Please check your connection and try again."
-        )
+        return f"ERROR: {str(e)}"
 
 
 st.session_state.setdefault("messages", [])
