@@ -163,8 +163,8 @@ with st.container(key="about_section"):
         if PROFILE_IMAGE.exists():
             st.image(str(PROFILE_IMAGE), width="stretch")
     with bio_column:
-        st.markdown("#### Shayan Baig")
-        st.caption("Software Engineering student and AI developer.")
+        st.markdown("#### Muhammad Shayan Baig")
+        st.caption("Aspiring AI & full-stack developer.")
         st.write(
             "Building AI applications,AI Automations ,RAG systems, chatbots, and intelligent software solutions."
         )
